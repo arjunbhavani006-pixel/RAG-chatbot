@@ -1,0 +1,8 @@
+
+fastapi
+uvicorn[standard]
+openai
+chromadb
+PyMuPDF
+python-dotenv
+python-multipart

@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical RAG Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="brand-icon">R</div>
+            <div>
+                <h1>Technical RAG Assistant</h1>
+                <p>Ask questions from your technical manuals</p>
+            </div>
+            <span class="status"><span></span> Local app</span>
+        </header>
+
+        <main class="layout">
+            <aside class="sidebar">
+                <h2>Your documents</h2>
+                <p class="muted">Upload a PDF to add it to your knowledge base.</p>
+
+                <form id="upload-form">
+                    <label class="upload-box" for="pdf-file">
+                        <span class="upload-icon">↑</span>
+                        <strong>Choose a PDF</strong>
+                        <span class="muted">Maximum file size: 20 MB</span>
+                    </label>
+                    <input id="pdf-file" type="file" accept=".pdf,application/pdf" required>
+                    <button class="primary-button full-width" type="submit">
+                        Upload and process
+                    </button>
+                </form>
+
+                <p id="upload-status" class="status-message" role="status"></p>
+
+                <div class="document-heading">
+                    <h3>Knowledge base</h3>
+                    <button id="refresh-documents" class="icon-button" type="button" title="Refresh documents">↻</button>
+                </div>
+
+                <div id="document-list" class="document-list">
+                    <p class="muted">Loading documents...</p>
+                </div>
+
+                <p class="sidebar-note">
+                    Uploaded content is stored locally in your Chroma database.
+                    Text sent to the AI API is processed by your selected provider.
+                </p>
+            </aside>
+
+            <section class="chat-panel">
+                <div class="welcome" id="welcome">
+                    <div class="welcome-icon">✦</div>
+                    <h2>Your technical knowledge, searchable.</h2>
+                    <p>Upload a PDF manual, then ask a question about its contents.</p>
+
+                    <div class="suggestions">
+                        <button type="button" class="suggestion">Summarize the main topics</button>
+                        <button type="button" class="suggestion">Explain a technical concept</button>
+                        <button type="button" class="suggestion">Find troubleshooting steps</button>
+                    </div>
+                </div>
+
+                <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+
+                <form id="chat-form" class="chat-form">
+                    <textarea
+                        id="question"
+                        rows="2"
+                        maxlength="4000"
+                        placeholder="Ask a question about your technical PDFs..."
+                        required
+                    ></textarea>
+                    <div class="chat-form-bottom">
+                        <span class="muted">Answers are based on retrieved document context.</span>
+                        <button id="send-button" class="primary-button" type="submit">Send ↑</button>
+                    </div>
+                </form>
+
+                <p class="disclaimer">
+                    Verify important technical instructions against the original manual.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/app.js" defer></script>
+</body>
+</html>

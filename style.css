@@ -1,0 +1,379 @@
+
+:root {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: #202124;
+    background: #f5f7fb;
+    font-synthesis: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+button, textarea, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-shell {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: #fff;
+    border: 1px solid #e4e7ee;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: #fff;
+    background: #3156c9;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.topbar h1 {
+    font-size: 19px;
+    margin: 0 0 4px;
+}
+
+.topbar p, .muted {
+    color: #717785;
+    font-size: 13px;
+    margin: 0;
+}
+
+.status {
+    margin-left: auto;
+    color: #477a55;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.status span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background: #32a568;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.sidebar, .chat-panel {
+    background: #fff;
+    border: 1px solid #e4e7ee;
+    border-radius: 18px;
+}
+
+.sidebar {
+    padding: 22px;
+}
+
+.sidebar h2, .document-heading h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+.sidebar > .muted {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 24px 12px;
+    border: 1.5px dashed #cbd2e3;
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.upload-box:hover {
+    background: #f7f8ff;
+    border-color: #3156c9;
+}
+
+.upload-icon {
+    font-size: 26px;
+    color: #3156c9;
+}
+
+#pdf-file {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.primary-button {
+    color: white;
+    background: #3156c9;
+    border: 0;
+    border-radius: 10px;
+    padding: 11px 16px;
+    font-weight: 600;
+}
+
+.primary-button:hover {
+    background: #2545aa;
+}
+
+.primary-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.status-message {
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.document-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+}
+
+.icon-button {
+    border: 1px solid #e4e7ee;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 9px;
+}
+
+.document-list {
+    display: grid;
+    gap: 10px;
+}
+
+.document-item {
+    padding: 12px;
+    border: 1px solid #e9ebf1;
+    border-radius: 11px;
+    overflow-wrap: anywhere;
+}
+
+.document-item strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.document-item small {
+    color: #777d8b;
+}
+
+.delete-button {
+    margin-top: 9px;
+    border: 0;
+    color: #b42318;
+    background: #fff0ef;
+    border-radius: 7px;
+    padding: 6px 9px;
+    font-size: 12px;
+}
+
+.sidebar-note {
+    color: #777d8b;
+    font-size: 11px;
+    line-height: 1.6;
+    margin-top: 24px;
+}
+
+.chat-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 680px;
+    padding: 26px;
+}
+
+.welcome {
+    margin: auto;
+    max-width: 570px;
+    text-align: center;
+    padding: 32px 0;
+}
+
+.welcome-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    color: #3156c9;
+    background: #edf1ff;
+    border-radius: 18px;
+    font-size: 28px;
+}
+
+.welcome h2 {
+    font-size: clamp(22px, 3vw, 30px);
+    margin: 20px 0 10px;
+}
+
+.welcome p {
+    color: #717785;
+    line-height: 1.7;
+}
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.suggestion {
+    background: white;
+    border: 1px solid #dfe3ed;
+    color: #454c5c;
+    border-radius: 999px;
+    padding: 10px 13px;
+    font-size: 12px;
+}
+
+.suggestion:hover {
+    border-color: #3156c9;
+    color: #3156c9;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 8px 0 22px;
+}
+
+.message {
+    max-width: 90%;
+    padding: 15px 17px;
+    border-radius: 15px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: #3156c9;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background: #f3f5fa;
+    border-bottom-left-radius: 4px;
+}
+
+.sources {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #dfe3ed;
+    font-size: 12px;
+}
+
+.source-item {
+    margin-top: 9px;
+    color: #525a69;
+}
+
+.source-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.chat-form {
+    margin-top: auto;
+    padding: 14px;
+    border: 1px solid #dfe3ed;
+    border-radius: 15px;
+}
+
+.chat-form textarea {
+    width: 100%;
+    resize: vertical;
+    border: 0;
+    outline: 0;
+    min-height: 54px;
+    color: #202124;
+}
+
+.chat-form-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.chat-form-bottom .muted {
+    line-height: 1.5;
+}
+
+.disclaimer {
+    color: #777d8b;
+    font-size: 11px;
+    text-align: center;
+    margin: 14px 0 0;
+}
+
+@media (max-width: 850px) {
+    .app-shell {
+        padding: 12px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-panel {
+        min-height: 600px;
+        padding: 18px;
+    }
+
+    .status {
+        display: none;
+    }
+
+    .message {
+        max-width: 100%;
+    }
+}
